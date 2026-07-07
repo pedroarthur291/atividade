@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        int[] n = new int[30];
+        Dictionary<int, int> cont = new Dictionary<int, int>();
+  Console.WriteLine("Digite 30 números inteiros:");
+        for (int i = 0; i < n.Length; i++)
+        {
+            Console.Write($"Posição [{i + 1}]: ");
+            while (!int.TryParse(Console.ReadLine(), out n[i]))
+            {
+                Console.Write("Valor inválido. Insira um número inteiro: ");
+            }
+            if (cont.ContainsKey(numeros[i]))
+            {
+                cont[numeros[i]]++;
+            }
+            else
+            {
+                cont[numeros[i]] = 1;
+            }
+        }
+               Console.WriteLine("\nFrequência dos números em porcentagem:");
+        foreach (var par in cont)
+        {
+            double porcentagem = (double)par.Value / numeros.Length * 100;
+            Console.WriteLine($"Número {par.Key}: apareceu {par.Value} vez(es) ({porcentagem:F2}%)");
+        }
+    }
+}
