@@ -1,0 +1,20 @@
+using System;
+using System.Globalization;
+
+class Program
+{
+    static void Main()
+    {
+        int[]posição=new int[10];
+        int par=0;
+        for (int x = 0; x < 10; x++)
+        {
+            Console.Write($"Digite seus valores: ");
+            posição[x]= int.Parse(Console.ReadLine());
+            if(posição[x] % 2 = 0)
+            {
+                par++;
+            }
+        }
+        Console.WriteLine($"Você possui {par} números pares.");
+        }}
