@@ -1,0 +1,79 @@
+using System;
+
+class N1
+{
+    static void Main()
+    {
+        int linhas = 10;
+        int colunas = 20;
+        int[,] M = new int[linhas, colunas];
+        Random random = new Random();
+             for (int i = 0; i < linhas; i++)
+        {
+            for (int j = 0; j < colunas; j++)
+            {
+                M[i, j] = random.Next(0, 51); 
+            }
+        }
+ Console.WriteLine("a) Maior elemento de cada linha:");
+        for (int i = 0; i < linhas; i++)
+        {
+            int maiorLinha = M[i, 0];
+            for (int j = 1; j < colunas; j++)
+            {
+                if (M[i, j] > maiorLinha)
+                {
+                    maiorLinha = M[i, j];
+                }
+            }
+            Console.WriteLine($"Linha {i}: {maiorLinha}");
+        }
+              Console.WriteLine("\nb) Média dos elementos de cada coluna:");
+        for (int j = 0; j < colunas; j++)
+        {
+            double somaColuna = 0;
+            for (int i = 0; i < linhas; i++)
+            {
+                somaColuna += M[i, j];
+            }
+            double media = somaColuna / linhas;
+            Console.WriteLine($"Coluna {j}: {media:F2}");
+        }
+    double produto = 1;
+        bool possuiDiferenteDeZero = false;
+
+        for (int i = 0; i < linhas; i++)
+        {
+            for (int j = 0; j < colunas; j++)
+            {
+                if (M[i, j] != 0)
+                {
+                    produto *= M[i, j];
+                    possuiDiferenteDeZero = true;
+                }}}
+                Console.WriteLine("\nc) Produto de todos os elementos diferentes de zero:");
+        if (possuiDiferenteDeZero)
+            Console.WriteLine(produto);
+        else
+            Console.WriteLine("Não existem elementos diferentes de zero na matriz.");
+
+        // d) Buscar posição de um elemento lido
+        Console.WriteLine("\nd) Busca de elemento:");
+        Console.Write("Digite um valor inteiro para buscar na matriz: ");
+        if (int.TryParse(Console.ReadLine(), out int valorBusca))
+        {
+            bool encontrado = false;
+            for (int i = 0; i < linhas; i++)
+            {
+                for (int j = 0; j < colunas; j++)
+                {
+                    if (M[i, j] == valorBusca)
+                    {
+                        Console.WriteLine($"Valor {valorBusca} encontrado na posição: Linha {i}, Coluna {j}");
+                        encontrado = true;
+                    }}}
+
+            if (!encontrado)
+            {Console.WriteLine($"O valor {valorBusca} não foi encontrado na matriz.");}}
+        else
+        {Console.WriteLine("Valor inválido inserido.");}}}
