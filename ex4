@@ -1,0 +1,36 @@
+class Ex4
+{
+    static void Main()
+    {
+        int numeromaisalto = 0;
+        double alturamaisalto = double.MaxValue;;
+        int numeromenor = 0;
+        double alturamenor = double.MinValue;
+
+        Console.WriteLine("Digite o número dos 10 alunos: ");
+        for (int i = 1; i < 10; i++)
+        {
+            Console.WriteLine("Digite o número do aluno: ");
+            int numero = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite a altura do aluno: ");
+            double altura = double.Parse(Console.ReadLine());
+
+            if (altura > alturamaisalto)
+            {
+                alturamaisalto = altura;
+                numeromaisalto = numero;
+            }
+            if (altura < alturamenor)
+            {
+                alturamenor = altura;
+                numeromenor = numero;
+            }
+              Console.WriteLine();
+            
+        }
+        Console.WriteLine($"aluno mais alto tem número {numeromaisalto} com {alturamaisalto} metros");
+        Console.WriteLine($"Aluno mais baixo tem número {numeromenor} com {alturamenor} metros");
+
+    }
+    }
