@@ -1,0 +1,36 @@
+using System;
+using System.Xml;
+
+class N2
+{
+    static void Main()
+    {
+        int[,] m = new int[15,15];
+        int maiorvalor = int.MinValue;
+        int linhamaiorvalor = 0;
+        
+        Console.WriteLine($"{m.GetLength}");
+        
+        for (int i = 0; i < m.GetLength(0); i++)
+        {
+            for (int j = 0; j < m.GetLength(1); j++)
+            {
+                if (m[i,j] > maiorvalor)
+                {
+                    maiorvalor = m[i,j];
+                    linhamaiorvalor = i;
+                }
+            }
+
+        }
+        int minimax = int.MaxValue;
+        for (int j = 0; j < m.GetLength(1); j++)
+        {
+            if (m[linhamaiorvalor,j] < minimax)
+            {
+                minimax = m[linhamaiorvalor,j];
+            }
+        }
+        Console.WriteLine($"O minimax da matriz é {minimax}.");
+    }
+}
