@@ -1,0 +1,28 @@
+class Atv3
+{
+    static void Main()
+    {
+        int [,]matriz = new int[4, 5];
+        Random random = new Random();
+
+        Console.WriteLine($"{matriz.GetLength}");
+        for (int i = 0; i < 4; i++)
+        {
+             for (int j = 0; j < 5; j++)
+            {
+                matriz[i,j] = random.Next(0, 10);
+                Console.WriteLine(matriz[i,j]+ "\t");
+            }
+            Console.WriteLine();
+        }
+        var elementos = matriz.Cast<int>();
+        
+        var ocorrencias = elementos.GroupBy(x => x)
+                                    .Select(g => new { Numero = g.Key, Quantidade = g.Count() })
+                                    .OrderBy(g => g.Numero);
+
+        Console.WriteLine("\n--- Ocorrências de cada elemento ---");
+        foreach (var item in ocorrencias)
+        {
+            Console.WriteLine($"O número {item.Numero} aparece {item.Quantidade} vez(es).");
+        }}}
