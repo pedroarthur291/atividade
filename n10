@@ -1,0 +1,36 @@
+using System.Security.Principal;
+
+class N10
+{
+    static void Main()
+    {
+        int[,]m1 = new int [5,5];
+        int[,]m2 = new int [5,5];
+
+        int linham1 = m1.GetLength;
+        int colunam1 = m1.GetLength;
+        int colunam2 = m1.GetLength;
+
+        int[,]m3 = new int [linham1,colunam2];
+
+    for (int i = 0; i < linham1; i++)
+        {
+            for (int j = 0; j < colunam2)
+            {
+                for (int k = 0; k < colunam1; k++)
+                {
+                    m3[i,j] += m1[i,k] * m2[k,j];
+                }
+            }
+        }
+        Console.WriteLine("Matriz resultante: ");
+        for (int i = 0; i < linham1; i++)
+        {
+            for (int j = 0; j < colunam2; j++)
+            {
+                Console.WriteLine(m3[i,j] + "\t");
+            }
+            Console.WriteLine();
+        }
+    }
+}
