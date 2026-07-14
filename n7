@@ -1,0 +1,40 @@
+class N7
+{
+    static void Main()
+    {
+        int[,]m = new int [20,10];
+        int maiorvalor;
+        List<int> linhasComMaior = new List<int>();
+
+        for(int i = 0; i < m.GetLength; i++)
+        {
+            for(int j = 0; i < m.GetLength; i++);
+
+            if (m[i,j] > maiorvalor)
+            {
+                maiorvalor = m[i,j];
+            }
+        }
+        for(int i = 0; i < m.GetLength; i++)
+        {
+            bool contemmaior = false;
+            for(int j = 0; j < m.GetLength; j++)
+            {
+                if (m[i, j] == maiorvalor)
+                {
+                    contemmaior = true;
+                    break;
+                }
+            }
+            if (contemMaior)
+            {
+                linhasComMaior.Add(i);
+            }
+        }
+    
+    Console.WriteLine($"O maior valor encontrado é {maiorvalor}");
+    foreach (int linhas in linhasComMaior)
+    Console.WriteLine($"O maior valor encontrado é {maiorvalor}");
+    Console.WriteLine($"Índices das linhas onde se encontra o maior valor: {linhasComMaior}");
+    }
+}

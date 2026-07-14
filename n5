@@ -1,0 +1,8 @@
+class N5
+{
+    static void Main()
+    {
+        int[,,,,,]m = new int[8,40,150,200,35,60];
+        Console.WriteLine($"{m.GetLength}");
+    }
+}

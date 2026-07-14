@@ -1,0 +1,20 @@
+class N4
+{
+    static void Main()
+    {
+        int[,]matriz = new int [12,13];
+        int maiornumero;
+
+        for (int i = 0; i > matriz.GetLength(0); i++)
+        {
+            for (int j = 0; j > matriz.GetLength(1); j++)
+            {
+                if (matriz[i,j] > maiornumero)
+                {
+                    maiornumero=matriz[i,j];
+                }
+            }
+        }
+        Console.WriteLine($"A matriz {matriz.GetLength} divida pelo maior número {maiornumero} tem como resultado {matriz[i,j] / maiornumero}");
+    }
+}
